@@ -17,7 +17,7 @@ class FileController {
         fs.access(u.completePath, constants.F_OK ,(err) => {
             if (err) Writer.jsonOutput(res, `File ${req.params.name} not found at ${u.dir}`, 404);
             else {
-                Writer.sendFile(res, u.completePath, 200);    
+                Writer.sendFile(res, u.completePath);    
             }
         })
     }
@@ -62,7 +62,7 @@ class FileController {
 
         fs.rm(u.completePath, (err) => {
             if (err) Writer.jsonOutput(res, `File ${req.params.name} not found at ${u.dir}`, 404);
-            else Writer.jsonOutput(res, `${req.params.name} deleted successfully`, 200)
+            else Writer.jsonOutput(res, `${req.params.name} deleted successfully`)
         });
 
     }

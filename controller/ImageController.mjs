@@ -38,7 +38,7 @@ class ImageController {
             if(err) Writer.jsonOutput(res, err, 400);
             else fs.copyFile(req.body.image.path,
                  path.join(u.pathToDir, fileName),
-                 (err) => {
+                (err) => {
                     if(err) Writer.jsonOutput(res, err, 400);
                     else Writer.jsonOutput(res, {
                                                 'dir': u.pathToDir,
@@ -93,7 +93,7 @@ class ImageController {
                                         'name': fileName
                                         }, 201);
                                     });
-                    }); 
+                    });         
         })
     }
 

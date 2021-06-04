@@ -8,11 +8,9 @@ class Writer {
      * 
      * @param res The response object
      * @param msg The message to send to the Json Format
-     * @param code The HTTP status code
+     * @param code The HTTP status code default : 200
      */
-    static jsonOutput(res, msg, code){
-        res.header("Access-Control-Allow-Origin", "*")
-        res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    static jsonOutput(res, msg, code=200){
         res.status(code).json(msg)
     }
 
@@ -27,11 +25,7 @@ class Writer {
     static sendFile(res, path, code=200){
         magic.detectFile(path, (err, mime) => {
             if (err) this.jsonOutput(res, 'File not found', 404);
-            else {
-                res.header("Access-Control-Allow-Origin", "*")
-                res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-                res.status(code).type(mime).sendFile(path);
-            }
+            else res.status(code).type(mime).sendFile(path);
         });
 
     }
