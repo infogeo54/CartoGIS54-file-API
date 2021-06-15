@@ -1,0 +1,13 @@
+{
+    "typeCheck": {
+        "acceptedTypes" : {
+            "image": "*",
+            "text": [
+                "plain", "html"
+            ]
+        },
+        "rejectedExt" : [
+            "js", "json"
+        ]
+    }
+}

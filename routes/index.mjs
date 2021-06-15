@@ -4,15 +4,14 @@ import ImageController from '../controller/ImageController.mjs';
 import imageSchema from '../dto/imageSchema.mjs';
 import fileSchema from '../dto/fileSchema.mjs';
 import validateDto from '../middleware/validate-dto.mjs';
-import imageTypeCheck from '../middleware/imageCheckType.mjs'
-import fileTypeCheck from '../middleware/fileCheckType.mjs'
+import imageTypeCheck from '../middleware/imageCheckType.mjs';
+import fileTypeCheck from '../middleware/fileCheckType.mjs';
+import Writer from '../writer.mjs';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Acces-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    res.send("Hello")
+router.get('/ping', (req, res) => {
+    Writer.jsonOutput(res, 'File API is replying', 200);
 })
 
 
@@ -28,7 +27,6 @@ router.delete('/:layer/images/:name', ImageController.deleteImage);
 
 // PUT an Image
 router.put('/:layer/images/:name', validateDto(imageSchema), imageTypeCheck(), ImageController.putImage);
-
 
 
 /// --- FILES --- ///

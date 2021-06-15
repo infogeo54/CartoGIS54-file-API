@@ -31,7 +31,7 @@ class FileController {
      * @param res 
      */
     postFile(req, res){
-
+        
         const u = new PathUtils(req)
         let fileName = path.parse(req.body.file.path).base;
         
