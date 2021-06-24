@@ -9,5 +9,9 @@
         "rejectedExt" : [
             "js", "json"
         ]
-    }
+    },
+    "domainsAllowed": [
+        "http://localhost:8081",
+        "http://sgeol3.cg54.local:8082"
+    ]
 }
