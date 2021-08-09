@@ -1,7 +1,6 @@
 {
     "events": {
-        "restart": "kill-port 8888",
-        "crash": "kill-port 8888"
+        "exit": "kill-port $PORT"
     },
-    "delay": "1500"
+    "delay": "2500"
 }

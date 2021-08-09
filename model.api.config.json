@@ -1,0 +1,37 @@
+/* 
+  Voici le modèle de api.config.json, le fichier de configuration de l'application de FileAPI de CartoGIS54.
+  Ce fichier est du json, format de données basé sur JavaScript.
+  Bien que la synthaxe est proche du JavaScript, il y a des restriction :
+    - Après le dernier attribut d'un objet ou le dernier élémnet d'un tableau/liste, il ne faut pas mettre de virgule ","
+    - Les clés ("keys") et noms d'attribut doivent être entre double guillemets comme ceci "nom de l'attribut"
+    - Les annotations/commentaires sont interdites
+
+  Afin de correctement modifier le fichier de configuration, veuillez utiliser un éditeur de texte 
+  comme Visual Studio Code qui offre des outils comme indiquer les errreurs dans le json 
+  ou bien une extension type Beautify pour indenter de manière plus compréhensible le json
+
+*/
+{
+    "typeCheck": { // liste les types de fichiers autorisés ou non dans l'application
+        "acceptedTypes" : { // types acceptés
+            /*  sous la forme de type MIME 
+                cf: https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+                les types sont les clés et les sous-types sont sous la forme d'une liste.
+                Pour mettre tous les sous-types d'un type, ajoutez "*"
+                Voir les exemples si dessous
+            */
+            "image": "*", // ici correspond à image/* == toutes les images
+            "text": [
+                "plain", "html" // ici correspond à text/plain et text/html
+            ]
+        },
+        "rejectedExt" : [ // liste les extensions rejetés par l'application 
+                        // cf https://fr.wikipedia.org/wiki/Liste_d%27extensions_de_fichiers
+            "js", "json" // ici les fichiers JavaScript et JSON
+        ]
+    },
+    "domainsAllowed": [ // les domaines vers lesquels on souhaite que l'API intéragisse
+        "http://localhost:8080",
+        "https://monAppliCarto.fr"
+    ]
+}

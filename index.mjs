@@ -4,6 +4,8 @@ import os from 'os';
 import router from './routes/index.mjs';
 import apiErrorHandler from './error/api-error-handler.mjs';
 import { readFile } from "fs/promises" 
+import { readFileSync } from 'fs';
+import https from 'https'
 
 const app = express();
 const formDataOptions = {
@@ -30,9 +32,13 @@ app.use(async function (req, res, next) {
 })
 
 app.use('/', router);
-
-
+ 
 app.use(apiErrorHandler);
+const pathToCert = JSON.parse(await readFile(new URL('pathToCert.json', import.meta.url)));
+const server = https.createServer({
+    key: readFileSync(pathToCert.key),
+    cert: readFileSync(pathToCert.cert)
+}, app);
 
-const port = process.env.PORT || 8888;
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const port = process.env.PORT;
+server.listen(port, () => console.log(`Listening on port ${port}`));

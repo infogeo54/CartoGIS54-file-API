@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "api": "nodemon index.mjs"
+    "start": "PORT=8888 nodemon index.mjs",
+    "clean-port": "kill-port 8888"
   },
   "keywords": [],
   "author": "",

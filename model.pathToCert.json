@@ -1,0 +1,12 @@
+/* 
+  Voici le modèle de pathToCert.json qui indique le chemin vers la clé et le certificat SSL.
+  Ce fichier est du json, format de données basé sur JavaScript.
+  Bien que la synthaxe est proche du JavaScript, il y a des restriction :
+    - Après le dernier attribut d'un objet ou le dernier élémnet d'un tableau/liste, il ne faut pas mettre de virgule ","
+    - Les clés ("keys") et noms d'attribut doivent être entre double guillemets comme ceci "nom de l'attribut"
+    - Les annotations/commentaires sont interdites
+*/
+{
+    "key": "/path/to/ssl.key",
+    "cert": "/path/to/ssl/certificate.crt"
+}

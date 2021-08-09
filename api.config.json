@@ -12,6 +12,9 @@
     },
     "domainsAllowed": [
         "http://localhost:8081",
-        "http://sgeol3.cg54.local:8082"
+        "http://sgeol3.cg54.local:8082",
+        "http://sgeol3.cg54.local:8083",
+        "https://sgeol3.cg54.local:8084",
+        "https://sgeol3.cg54.local:5444"
     ]
 }
