@@ -1,3 +1,4 @@
+import express from 'express'
 import fs, { constants } from 'fs';
 import path from "path"
 import Writer from '../writer.mjs';
@@ -7,11 +8,11 @@ import PathUtils from '../pathUtils/ImagePathUtils.mjs';
 class ImageController {
 
     /**
-     * getImage : send the image of the layer passed in the URI to the client if it exists,
+     * Send the image of the layer passed in the URI to the client if it exists,
      * else send an error to the client
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     getImage(req, res){
         const u = new PathUtils(req)
@@ -23,12 +24,12 @@ class ImageController {
     }
 
     /**
-     * postImage : put the image passed in the request into the layer/image directory (layer passed in the uri).
+     * Put the image passed in the request into the layer/image directory (layer passed in the uri).
      * if it succeed return to the client the new name of the image,
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     postImage(req, res){
         const u = new PathUtils(req)
@@ -49,12 +50,12 @@ class ImageController {
     }
 
     /**
-     * deleteImage : delete the image of the layer passed in the URI
+     * Delete the image of the layer passed in the URI
      * if it succeed return a message to the client
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     deleteImage(req, res){
         const u = new PathUtils(req)
@@ -68,12 +69,12 @@ class ImageController {
 
 
     /**
-     * putImage : replaced the image of the layer passed in the URI by the one in the request body
+     * Replaced the image of the layer passed in the URI by the one in the request body
      * if it succeed return to the client the new name of the image,
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     putImage(req, res){
         const u = new PathUtils(req)

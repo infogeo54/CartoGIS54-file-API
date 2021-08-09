@@ -1,3 +1,4 @@
+import express from 'express'
 import fs, { constants } from 'fs';
 import path from "path"
 import Writer from '../writer.mjs';
@@ -6,11 +7,11 @@ import PathUtils from '../pathUtils/FilePathUtils.mjs';
 class FileController {
 
     /**
-     * getFile : send the file of the layer passed in the URI to the client if it exists,
+     * Send the file of the layer passed in the URI to the client if it exists,
      * else send an error to the client
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     getFile(req, res){
         const u = new PathUtils(req)
@@ -23,12 +24,12 @@ class FileController {
     }
 
     /**
-     * postFile : put the file passed in the request into the layer/files directory (layer passed in the uri).
+     * Put the file passed in the request into the layer/files directory (layer passed in the uri).
      * if it succeed return to the client the new name of the file,
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     postFile(req, res){
         
@@ -50,12 +51,12 @@ class FileController {
     }
 
     /**
-     * deleteFile : delete the file of the layer passed in the URI
+     * Delete the file of the layer passed in the URI
      * if it succeed return a message to the client
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     deleteFile(req, res){
         const u = new PathUtils(req)
@@ -69,12 +70,12 @@ class FileController {
 
 
     /**
-     * putFile : replaced the file of the layer passed in the URI by the one in the request body
+     * Replaced the file of the layer passed in the URI by the one in the request body
      * if it succeed return to the client the new name of the file,
      * else send an error to the client.
      * 
-     * @param req 
-     * @param res 
+     * @param { express.Request } req - The request body
+     * @param { express.Response } res - The response body
      */
     putFile(req, res){
         const u = new PathUtils(req)

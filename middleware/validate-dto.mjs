@@ -1,5 +1,13 @@
+import Joi from "joi";
 import ApiError from "../error/api-error.mjs";
 
+/**
+ * Validate the request body with a Joi schema
+ * 
+ * @param { Joi.ObjectSchema } schema - A Joi schema 
+ * 
+ * @returns { fileAPIMiddleware } return a middleware function
+ */
 function validateDto(schema) {
     return async (req, res, next) => {
         try {
@@ -12,5 +20,13 @@ function validateDto(schema) {
         }
     }
 }
+
+/**
+ * @typedef { Function } fileAPIMiddleware
+ * @async
+ * @param { express.Request } req - The request object
+ * @param { express.Response } res - The response object 
+ * @param { express.NextFunction } next - The next middleware function
+ */
 
 export default validateDto;

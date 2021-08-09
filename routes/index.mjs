@@ -10,6 +10,7 @@ import Writer from '../writer.mjs';
 
 const router = express.Router();
 
+// TEST the API
 router.get('/ping', (req, res) => {
     Writer.jsonOutput(res, 'File API is replying', 200);
 })

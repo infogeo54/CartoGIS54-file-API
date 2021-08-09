@@ -12,6 +12,7 @@ const formDataOptions = {
     uploadDir: os.tmpdir(),
     autoClean: true,
 }
+
 app.use(formData.parse(formDataOptions))
 app.use(formData.format());
 app.use(formData.stream());
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }))
+
 app.use(async function (req, res, next) {
     const domainsAllowed = JSON.parse(await readFile(new URL('api.config.json', import.meta.url))).domainsAllowed
     if (domainsAllowed.indexOf(req.headers.origin) !== -1){
@@ -35,10 +37,22 @@ app.use('/', router);
  
 app.use(apiErrorHandler);
 const pathToCert = JSON.parse(await readFile(new URL('pathToCert.json', import.meta.url)));
-const server = https.createServer({
-    key: readFileSync(pathToCert.key),
-    cert: readFileSync(pathToCert.cert)
-}, app);
-
 const port = process.env.PORT;
-server.listen(port, () => console.log(`Listening on port ${port}`));
+
+
+// Si les chemins de la clé et du certficat existent, 
+// Lance le serveur en HTTPS
+// Ou le lance en HTTP
+if (pathToCert 
+        && pathToCert.key && readFileSync(pathToCert.key)
+        && pathToCert.cert && readFileSync(pathToCert.cert)
+    ){
+    const server = https.createServer({
+        key: readFileSync(pathToCert.key),
+        cert: readFileSync(pathToCert.cert)
+    }, app);
+        
+    server.listen(port, () => console.log(`Listening on port ${port}`));
+}else {
+    app.listen(port, () => console.log(`Listening on port ${port}`));
+}
