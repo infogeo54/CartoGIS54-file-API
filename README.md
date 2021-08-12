@@ -1,5 +1,5 @@
 # CartoGIS54 file API
-__A REST API to manage and store locally files and images for [the Cartgis54 app](https://github.com/infogeo54/CartoGIS54).__
+__A REST API to manage and store locally files and images for [the CartoGIS54 app](https://github.com/infogeo54/CartoGIS54).__
 
 ## Description 
 It uses [Node.js](https://nodejs.org/) with the framework [Express.js](https://expressjs.com/fr/) and [fs, the Node's file-system module](https://nodejs.org/api/fs.html).
