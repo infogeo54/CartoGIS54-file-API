@@ -34,8 +34,9 @@ app.use(async function (req, res, next) {
 })
 
 app.use('/', router);
- 
+
 app.use(apiErrorHandler);
+
 const pathToCert = JSON.parse(await readFile(new URL('pathToCert.json', import.meta.url)));
 const port = process.env.PORT;
 
@@ -47,7 +48,7 @@ if (pathToCert
         && pathToCert.key && readFileSync(pathToCert.key)
         && pathToCert.cert && readFileSync(pathToCert.cert)
     ){
-    const server = https.createServer({
+     const server = https.createServer({
         key: readFileSync(pathToCert.key),
         cert: readFileSync(pathToCert.cert)
     }, app);

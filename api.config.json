@@ -3,7 +3,13 @@
         "acceptedTypes" : {
             "image": "*",
             "text": [
-                "plain", "html"
+                "plain"
+            ],
+            "application" : [
+                "pdf",
+                "msword", "vnd.openxmlformats-officedocument.wordprocessingml.document", "vnd.oasis.opendocument.text", "rtf",
+                "vnd.ms-powerpoint", "vnd.openxmlformats-officedocument.presentationml.presentation", "vnd.oasis.opendocument.presentation",
+                "vnd.ms-excel", "vnd.openxmlformats-officedocument.spreadsheetml.sheet", "vnd.oasis.opendocument.spreadsheet"
             ]
         },
         "rejectedExt" : [

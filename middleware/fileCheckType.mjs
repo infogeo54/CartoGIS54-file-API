@@ -36,8 +36,9 @@ function fileTypeCheck() {
                 let m = mime.split('/');
                 if(typeCheck(conf.acceptedTypes, m[0], m[1]) && 
                     !conf.rejectedExt.includes(path.extname(req.body.file.path).replace(".",""))
-                ) next();
-                else next(ApiError.badRequest(`This type of file is not accepted.`));
+                ) {
+                  next();
+                } else next(ApiError.badRequest(`This type of file is not accepted.`));
             }
         });
     }
