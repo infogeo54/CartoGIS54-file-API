@@ -23,12 +23,11 @@ The files and images are stored in the data folder following this tree folder.
             - someImageOfLayer2.png
             - anotherImageOfLayer2.gif
 
----
-
 ## Routes
 The following tables shows the different routes you can use, how to forge the request body and the type of response you will get
 
-:rotating_light: In case of a bad request or an internal error, a error message in JSON will be send instead of the normal response. 
+### :rotating_light: Errors
+ In case of a bad request or an internal error, a error message in JSON will be send instead of the normal response. 
 
 ### Test 
 | Routes | Request body | Response
