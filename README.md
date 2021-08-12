@@ -1,9 +1,8 @@
 # CartoGIS54 file API
+__A REST API to manage and store locally files and images for [the CartoGIS54 app](https://github.com/infogeo54/CartoGIS54).__
 
 ## Description 
-A REST API to manage and store locally files and images for [the Cartgis54 app](https://github.com/infogeo54/CartoGIS54).
-
-It uses [Node.js](https://nodejs.org/) with the framework [Express.js](https://expressjs.com/fr/) and the [fs, Node's file-system module](https://nodejs.org/api/fs.html).
+It uses [Node.js](https://nodejs.org/) with the framework [Express.js](https://expressjs.com/fr/) and [fs, the Node's file-system module](https://nodejs.org/api/fs.html).
 
 The files and images are stored in the data folder following this tree folder.
 
@@ -23,12 +22,11 @@ The files and images are stored in the data folder following this tree folder.
             - someImageOfLayer2.png
             - anotherImageOfLayer2.gif
 
----
-
 ## Routes
 The following tables shows the different routes you can use, how to forge the request body and the type of response you will get
 
-:rotating_light: In case of a bad request or an internal error, a error message in JSON will be send instead of the normal response. 
+### :rotating_light: Errors
+ In case of a bad request or an internal error, a error message in JSON will be send instead of the normal response. 
 
 ### Test 
 | Routes | Request body | Response
@@ -46,6 +44,7 @@ The following tables shows the different routes you can use, how to forge the re
 ### Images
 | Routes | Request body | Response
 | --- | --- | ---
+<<<<<<< HEAD
 | __`GET:`__ `/:layer/images/:filename` | None | `BLOB` : The image 
 | __`POST:`__ `/:layer/images/` | - `Content-type : "multipart/form-data"` <br>  - Field `image` the file to post | `JSON` : the new name of the image and its directory name 
 | __`DELETE:`__ `/:layer/images/:filename` | None | `JSON` : the success of the delete request
@@ -73,3 +72,4 @@ npm run start
 ```
 npm run start-dev
 ```
+
