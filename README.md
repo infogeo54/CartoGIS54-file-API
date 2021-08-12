@@ -44,14 +44,13 @@ The following tables shows the different routes you can use, how to forge the re
 ### Images
 | Routes | Request body | Response
 | --- | --- | ---
-<<<<<<< HEAD
 | __`GET:`__ `/:layer/images/:filename` | None | `BLOB` : The image 
 | __`POST:`__ `/:layer/images/` | - `Content-type : "multipart/form-data"` <br>  - Field `image` the file to post | `JSON` : the new name of the image and its directory name 
 | __`DELETE:`__ `/:layer/images/:filename` | None | `JSON` : the success of the delete request
 | __`PUT:`__ `/:layer/images/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `image` : the new file to post | `JSON` : the new name of the image, its directory name and the success of the delete of the old image 
 
 ## Config app
-To config correctly the app, modify api.config.json following the [`model.api.config.json`](model.api.config.json).
+To config correctly the app, modify api.config.json following the [`model.api.config.json`](https://raw.githubusercontent.com/infogeo54/CartoGIS54-file-API/master/model.api.config.json).
 
 If you want to pass the api in HTTPS, please create a pathToCert.json file and fill according to the [`model.pathToCert.json`](model.pathToCert.json).
 
