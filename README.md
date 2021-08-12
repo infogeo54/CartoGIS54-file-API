@@ -58,6 +58,7 @@ The default port of the app is 8888. If you want to change it, please modify scr
 
 ## Launch app
 To launch the app, open a terminal in the root directory and run the following commands :
+
 (_to install the dependecies_) 
 ```
 npm install
@@ -67,6 +68,7 @@ npm install
 ```
 npm run start
 ```
+
 (_or to start the api with nodemon : useful when coding_)
 ```
 npm run start-dev
