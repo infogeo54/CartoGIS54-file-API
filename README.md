@@ -33,20 +33,43 @@ The following tables shows the different routes you can use, how to forge the re
 ### Test 
 | Routes | Request body | Response
 | --- | --- | ---
-| GET /ping | None | JSON : The success of the communication with the API
+| __`GET:`__ `/ping` | None | `JSON` : The success of the communication with the API
 
 ### Files
 | Routes | Request body | Response
 | --- | --- | ---
-| GET /:layer/files/:filename | None | BLOB : The file 
-| POST /:layer/files/ | - Content-type : "multipart/form-data" <br>  - Field "file" : the file to post | JSON : the new name of the file and its directory name 
-| DELETE /:layer/files/:filename | None | JSON : the success of the delete request
-| PUT /:layer/files/:filename | - Content-type : "multipart/form-data" <br>  - Field "file" : the new file to post | JSON : the new name of the file, its directory name and the success of the delete of the old file 
+| __`GET:`__ `/:layer/files/:filename` | None | `BLOB` : The file 
+| __`POST:`__ `/:layer/files/` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the file to post | `JSON` : the new name of the file and its directory name 
+| __`DELETE:`__ `/:layer/files/:filename` | None | `JSON` : the success of the delete request
+| __`PUT:`__ `/:layer/files/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the new file to post | `JSON` : the new name of the file, its directory name and the success of the delete of the old file 
 
 ### Images
 | Routes | Request body | Response
 | --- | --- | ---
-| GET /:layer/images/:filename | None | BLOB : The image 
-| POST /:layer/images/ | - Content-type : "multipart/form-data" <br>  - Field "image" : the file to post | JSON : the new name of the image and its directory name 
-| DELETE /:layer/images/:filename | None | JSON : the success of the delete request
-| PUT /:layer/images/:filename | - Content-type : "multipart/form-data" <br>  - Field "image" : the new file to post | JSON : the new name of the image, its directory name and the success of the delete of the old image 
+| __`GET:`__ `/:layer/images/:filename` | None | `BLOB` : The image 
+| __`POST:`__ `/:layer/images/` | - `Content-type : "multipart/form-data"` <br>  - Field `image` the file to post | `JSON` : the new name of the image and its directory name 
+| __`DELETE:`__ `/:layer/images/:filename` | None | `JSON` : the success of the delete request
+| __`PUT:`__ `/:layer/images/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `image` : the new file to post | `JSON` : the new name of the image, its directory name and the success of the delete of the old image 
+
+## Config app
+To config correctly the app, modify api.config.json following the [`model.api.config.json`](model.api.config.json).
+
+If you want to pass the api in HTTPS, please create a pathToCert.json file and fill according to the [`model.pathToCert.json`](model.pathToCert.json).
+
+The default port of the app is 8888. If you want to change it, please modify scripts in [`package.json`](package.json) by replacing every 8888 to the port number you want.
+
+## Launch app
+To launch the app, open a terminal in the root directory and run the following commands :
+(_to install the dependecies_) 
+```
+npm install
+```
+
+(_to start the api_)
+```
+npm run start
+```
+(_or to start the api with nodemon : useful when coding_)
+```
+npm run start-dev
+```
