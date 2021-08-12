@@ -29,25 +29,25 @@ The following tables shows the different routes you can use, how to forge the re
  In case of a bad request or an internal error, a error message in JSON will be send instead of the normal response. 
 
 ### Test 
-| Routes | Request body | Response
-| --- | --- | ---
-| __`GET:`__ `/ping` | None | `JSON` : The success of the communication with the API
+| Method | Route | Request body | Response
+|--- | --- | --- | ---
+| __`GET`__ | `/ping` | None | `JSON` : The success of the communication with the API
 
 ### Files
-| Routes | Request body | Response
-| --- | --- | ---
-| __`GET:`__ `/:layer/files/:filename` | None | `BLOB` : The file 
-| __`POST:`__ `/:layer/files/` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the file to post | `JSON` : the new name of the file and its directory name 
-| __`DELETE:`__ `/:layer/files/:filename` | None | `JSON` : the success of the delete request
-| __`PUT:`__ `/:layer/files/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the new file to post | `JSON` : the new name of the file, its directory name and the success of the delete of the old file 
+| Method | Route | Request body | Response
+|--- | --- | --- | ---
+| __`GET`__ | `/:layer/files/:filename` | None | `BLOB` : The file 
+| __`POST`__ | `/:layer/files/` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the file to post | `JSON` : the new name of the file and its directory name 
+| __`DELETE`__ | `/:layer/files/:filename` | None | `JSON` : the success of the delete request
+| __`PUT`__ | `/:layer/files/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `file` : the new file to post | `JSON` : the new name of the file, its directory name and the success of the delete of the old file 
 
 ### Images
-| Routes | Request body | Response
-| --- | --- | ---
-| __`GET:`__ `/:layer/images/:filename` | None | `BLOB` : The image 
-| __`POST:`__ `/:layer/images/` | - `Content-type : "multipart/form-data"` <br>  - Field `image` the file to post | `JSON` : the new name of the image and its directory name 
-| __`DELETE:`__ `/:layer/images/:filename` | None | `JSON` : the success of the delete request
-| __`PUT:`__ `/:layer/images/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `image` : the new file to post | `JSON` : the new name of the image, its directory name and the success of the delete of the old image 
+| Method | Route | Request body | Response
+|--- | --- | --- | ---
+| __`GET`__ | `/:layer/images/:filename` | None | `BLOB` : The image 
+| __`POST`__ | `/:layer/images/` | - `Content-type : "multipart/form-data"` <br>  - Field `image` the file to post | `JSON` : the new name of the image and its directory name 
+| __`DELETE`__ |  `/:layer/images/:filename` | None | `JSON` : the success of the delete request
+| __`PUT`__ | `/:layer/images/:filename` | - `Content-type : "multipart/form-data"` <br>  - Field `image` : the new file to post | `JSON` : the new name of the image, its directory name and the success of the delete of the old image 
 
 ## Config app
 To config correctly the app, modify api.config.json following the [`model.api.config.json`](https://raw.githubusercontent.com/infogeo54/CartoGIS54-file-API/master/model.api.config.json).
