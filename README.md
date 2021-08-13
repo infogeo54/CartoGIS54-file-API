@@ -64,13 +64,18 @@ To launch the app, open a terminal in the root directory and run the following c
 npm install
 ```
 
-(_to start the api_)
+(_to start the api in the background, outputin the log/api.output.log_)
 ```
-npm run start
+npm run api
 ```
 
 (_or to start the api with nodemon : useful when coding_)
 ```
-npm run start-dev
+npm run api-dev
 ```
 
+
+(_or to kill the api )
+```
+npm run kill-api
+```

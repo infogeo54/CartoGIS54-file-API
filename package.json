@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "PORT=8888 node index.mjs",
-    "start-dev": "PORT=8888 nodemon index.mjs",
-    "clean-port": "kill-port 8888"
+    "api": "PORT=8888 nohup node index.mjs >> log/api.output.log 2>&1 &",
+    "api-dev": "PORT=8888 nodemon index.mjs",
+    "kill-api": "kill-port 8888"
   },
   "keywords": [],
   "author": "",
