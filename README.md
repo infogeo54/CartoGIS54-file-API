@@ -75,7 +75,7 @@ npm run api-dev
 ```
 
 
-(_or to kill the api )
+(_or to kill the api_)
 ```
 npm run kill-api
 ```
